@@ -1,0 +1,20 @@
+{
+    "name": "jackmakiyama/cash-machine",
+    "require-dev": {
+        "phpunit/phpunit": "4.1.4"
+    },
+    "authors": [
+        {
+            "name": "Jack Makiyama",
+            "email": "jackmakiyama@gmail.com"
+        }
+    ],
+    "require": {
+
+    },
+    "autoload": {
+        "psr-0": {
+            "" : "src/"
+        }
+    }
+}
