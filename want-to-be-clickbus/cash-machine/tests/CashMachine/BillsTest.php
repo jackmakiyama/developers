@@ -5,65 +5,37 @@ use CashMachine\Bills;
 
 class BillsTest extends \PHPUnit_Framework_TestCase
 {
+    private $cash;
 
-    /**
-     * @cover CashMachine\Bills::__construct
-     */
-    public function testInstantiation()
+    private $bills;
+
+    protected function setUp()
     {
-        $cash = [10.00, 100.00, 50.00, 20.00];
+        $this->cash  = [10.00, 100.00, 50.00, 20.00];
 
-        $this->assertInstanceOf(
-            'CashMachine\Bills',
-            new Bills($cash)
-        );
-
-        return $cash;
+        $this->bills = new Bills($this->cash);
+        $this->bills->setBills($this->cash);
     }
 
     /**
-     * @depends testInstantiation
-     * @cover CashManager\Bills::setBills
-     */
-    public function testSetBills($cash)
-    {
-        $bills = new Bills($cash);
-
-        return $bills;
-    }
-
-    /**
-     * @depends           testSetBills
-     * @cover             CashManager\Bills::setBills
-     * 
-     * @expectedException PHPUnit_Framework_Error
-     */
-    public function testSetBillsWithoutArrayCash()
-    {
-        $bills = new Bills;
-    }
-
-    /**
-     * @depends testSetBills
      * @cover   CashManager\Bills::getBills
      */
-    public function testGetBills($bills)
+    public function testGetBills()
     {
         $this->assertEquals(
             [100.00, 50.00, 20.00, 10.00],
-            $bills->getBills()
+            $this->bills->getBills()
         );
     }
 
     /**
-     * @depends testSetBills
      * @cover   CashManager\Bills::getSmallerBill
      */
-    public function testGetSmallerBill($bills)
+    public function testGetSmallerBill()
     {
         $this->assertEquals(
             10.00,
-            $bills->getSmallerBill()
+            $this->bills->getSmallerBill()
         );
     }
 

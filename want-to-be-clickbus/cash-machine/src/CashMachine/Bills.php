@@ -6,11 +6,6 @@ class Bills
 
     private $bills;
 
-    public function __construct(Array $bills)
-    {
-        $this->setBills($bills);
-    }
-
     public function getBills()
     {
         return $this->bills;
