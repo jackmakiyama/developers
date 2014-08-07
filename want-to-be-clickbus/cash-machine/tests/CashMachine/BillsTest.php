@@ -9,7 +9,7 @@ class BillsTest extends \PHPUnit_Framework_TestCase
     /**
      * @cover CashMachine\Bills::__construct
      */
-	public function testInstantiation()
+    public function testInstantiation()
     {
         $cash = [10.00, 100.00, 50.00, 20.00];
 
