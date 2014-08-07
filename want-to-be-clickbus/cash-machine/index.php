@@ -6,7 +6,8 @@ require 'bootstrap.php';
 
 $bills = [10.00, 100.00, 50.00, 20.00];
 
-$billsInstance = new Bills($bills);
+$billsInstance = new Bills;
+$billsInstance->setBills($bills);
 
 $draw = new Draw($billsInstance);
 
