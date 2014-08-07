@@ -10,7 +10,8 @@
         }
     ],
     "require": {
-
+        "respect/rest": "0.5.1",
+        "respect/config": "1.0.1"
     },
     "autoload": {
         "psr-0": {
