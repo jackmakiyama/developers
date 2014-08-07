@@ -30,15 +30,16 @@ class Draw
                 
             }
             
-            if($value < $smallerBill)
+            if ($value < $smallerBill) {
                 throw new NoteUnavailableException("Unavailable value");
+            }
 
-            if($value >= $bills[$i]){
+            if ($value >= $bills[$i]) {
                 $value -= $bills[$i];
                 $reserveBills[] = $bills[$i];
             }
 
-            if($value < $bills[$i]){
+            if ($value < $bills[$i]) {
                 $i++;
             }
         }
