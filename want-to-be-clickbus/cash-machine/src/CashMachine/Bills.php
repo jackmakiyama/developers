@@ -18,7 +18,7 @@ class Bills
 	
 	public function setBills($bills)
 	{
-		$bills = array_filter($bills, 'is_int');
+		$bills = array_filter($bills, 'is_float');
 
 		arsort($bills);
 		$bills = array_values($bills);

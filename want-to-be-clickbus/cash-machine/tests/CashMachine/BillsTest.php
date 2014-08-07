@@ -11,7 +11,7 @@ class BillsTest extends \PHPUnit_Framework_TestCase
      */
 	public function testInstantiation()
     {
-        $cash = [10, 100, 50, 20];
+        $cash = [10.00, 100.00, 50.00, 20.00];
 
         $this->assertInstanceOf(
             'CashMachine\Bills',
@@ -50,7 +50,7 @@ class BillsTest extends \PHPUnit_Framework_TestCase
     public function testGetBills($bills)
     {
         $this->assertEquals(
-            [100, 50, 20, 10],
+            [100.00, 50.00, 20.00, 10.00],
             $bills->getBills()
         );
     }
@@ -62,7 +62,7 @@ class BillsTest extends \PHPUnit_Framework_TestCase
     public function testGetSmallerBill($bills)
     {
         $this->assertEquals(
-            10,
+            10.00,
             $bills->getSmallerBill()
         );
     }
